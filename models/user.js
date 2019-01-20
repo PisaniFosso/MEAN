@@ -36,7 +36,7 @@ module.exports.getUserByname = function(username, callback){
 module.export.addUser = function(newUser, callback){
     bcrypt.genSalt(10, (err, salt) => {
         bcrypt.hash(newUser.password, salt, (err, hash) => {
-            if (err) throe err;
+            if (err) throw err;
             newUser.password = hash;
             newUser.save(callback)
         });
