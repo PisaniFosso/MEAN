@@ -33,6 +33,11 @@ app.use(express.static(path.join(__dirname, 'public')))
 //Body parser enable
 app.use (bodyParser.json());
 
+//passport enable
+app.use(passport.initialize());
+app.use(passport.session());
+require('./config/passport')(passport);
+
 app.use('/users', users);
 
 //index route
