@@ -24,14 +24,15 @@ export class RegisterComponent implements OnInit {
       password: this.password
     }
 
-
   //Requiered field
   if (!this.validateService.validateRegister(user)) {
     return false;
   }
 
   //validate email
-  if (!this.validateService.validateRegister(user.email)) {
+  if (!this.validateService.validateEmail(user.email)) {
     return false;
   }
+
+  console.log('registred');
 }
