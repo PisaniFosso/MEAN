@@ -26,22 +26,17 @@ export class RegisterComponent implements OnInit {
 
   //Requiered field
   if (!this.validateService.validateRegister(user)) {
-    alert("Enter all the fields");
     return false;
   }
 
   //validate email
   if (!this.validateService.validateEmail(user.email)) {
-    alert("use a valid email");
     return false;
   }
 
   //validate phone
   if (!this.validateService.validatePhone(user.phone)) {
-    alert("use a valid phone");
     return false;
   }
-
-  alert("good job");
 }
 }
