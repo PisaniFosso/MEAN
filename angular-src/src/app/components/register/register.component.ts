@@ -12,7 +12,7 @@ export class RegisterComponent implements OnInit {
   email: String;
   phone: String;
   password: String;
-  constructor(private validateService: ValidateService, private flashMessagesServices: FlashMessagesService) { }
+  constructor(private validateService: ValidateService, private flashMessage: FlashMessagesService) { }
 
   ngOnInit() {
   }
@@ -27,19 +27,19 @@ export class RegisterComponent implements OnInit {
 
   //Requiered field
   if (!this.validateService.validateRegister(user)) {
-    this.flashMessagesServices.show('please fill in all fields', {cssClass:'alert-danger', timeout:3000});
+    this.flashMessage.show('please fill in all fields', {cssClass:'alert-danger', timeout:3000});
     return false;
   }
 
   //validate email
   if (!this.validateService.validateEmail(user.email)) {
-    this.flashMessagesServices.show('please Enter a valid email', {cssClass:'alert-danger', timeout:3000});
+    this.flashMessage.show('please Enter a valid email', {cssClass:'alert-danger', timeout:3000});
     return false;
   }
 
   //validate phone
   if (!this.validateService.validatePhone(user.phone)) {
-    this.flashMessagesServices.show('please Enter a valid phone', {cssClass:'alert-danger', timeout:3000});
+    this.flashMessage.show('please Enter a valid phone number', {cssClass:'alert-danger', timeout:3000});
     return false;
   }
 }
