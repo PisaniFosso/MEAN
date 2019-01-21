@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ValidateService } from '../../services/validate.service';
+import { ValidateService } from '../../services/validate.service'
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
@@ -36,7 +36,7 @@ export class RegisterComponent implements OnInit {
     return false;
   }
 
-  //validate email
+  //validate phone
   if (!this.validateService.validatePhone(user.phone)) {
     alert("use a valid phone");
     return false;
