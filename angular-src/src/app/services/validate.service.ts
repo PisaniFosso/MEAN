@@ -24,7 +24,7 @@ export class ValidateService {
 
   validatePhone(phone){
        var phoneno = /^\(?([0-9]{3})\)?[-. ]?([0-9])[-. ]?([0-9]{2})??[-. ]([0-9]{2})?[-. ]?([0-9]{2})?[-. ]?([0-9]{2})$/;
-    if((phone.value.match(phoneno))
+    if(phone.value.match(phoneno))
         {
       return true;
         }
