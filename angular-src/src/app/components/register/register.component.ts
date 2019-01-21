@@ -26,7 +26,7 @@ export class RegisterComponent implements OnInit {
 
   //Requiered field
   if (!this.validateService.validateRegister(user)) {
-    alert("Enter all the fields")
+    alert("Enter all the fields");
     return false;
   }
 
